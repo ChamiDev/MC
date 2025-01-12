@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=none">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Chami">
+    <meta name="description" content="Guia de MCBE Oficial">
+    <link rel="icon" href="https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/favicon.ico" type="image/png">
+    <title>Guia MC</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #04253a, #0b3a56);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            user-select: none;
+        }
+
+        .fondo {
+            background-image: url('https://www.minecraft.net/content/dam/games/minecraft/key-art/MC-Vanilla_Media-Block-Image_PC-Bundle-Keyart_800x450.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(20px);
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .container {
+            width: 250px;
+            height: 250px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .game-header img {
+            width: 100%;
+            border-radius: 10px;
+            top: -31px;
+            position: relative;
+        }
+
+        .game-header h1 {
+            margin: 0;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .buttons {
+            justify-content: center;
+        }
+
+        .button {
+            background: rgba(0, 0, 0, 0.5);
+            margin: 1px 1px 1px 1px;
+            backdrop-filter: blur(5px);
+            color: #fff;
+            border: none;
+            padding: 0px 0px 0px 0px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: rgba(0, 255, 255, 0.4);
+            transform: scale(1.2);
+        }
+
+        .bimg {
+            max-width: 44px;
+            max-height: 44px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 90%;
+            height: 90%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #222;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .modal-content iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #444;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 1.2rem;
+        }
+
+        .modal-close:hover {
+            background: #ff0000;
+        }
+
+        .creditos {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fondo"></div>
+    <div class="container">
+        <div class="game-header">
+            <img class="cabeza" src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Play_With_Friends_Local_672x360.png" alt="Minecraft">
+            <h1>Minecraft</h1>
+            <p class="details">La Guia Definitiva</p>
+            <br>
+            <br>
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="showModal(1)">
+                <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
+            </button>
+            <button class="button" onclick="showModal(2)">
+                <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
+            </button>
+            <button class="button" onclick="showModal(3)">
+                <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
+            </button>
+            <button class="button" onclick="showModal(4)">
+                <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
+            </button>
+            <button class="button" onclick="showModal(5)">
+                <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
+            </button>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <iframe id="modalEmbed" src="" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="creditos">
+        Video grabado por
+        <a href="https://www.youtube.com/@soymiguelgamer" style="color: cyan;">Miguel Gamer</a>,
+        <a href="https://www.youtube.com/" style="color: red;">?</a> y
+        <a href="https://www.youtube.com/" style="color: green;">?</a>
+    </div>
+    <script>
+        function showModal(buttonId) {
+            const embeds = {
+                1: "https://drive.google.com/file/d/1VN63QjdyqDgKVvm3Cyex6wyhPVCXVD0Q/preview",
+                2: "https://drive.google.com/file/d/1ABCDXYZ/preview",
+                3: "https://drive.google.com/file/d/1ABCDXYZ/preview",
+                4: "https://drive.google.com/file/d/1ABCDXYZ/preview",
+                5: "https://drive.google.com/file/d/1ABCDXYZ/preview"
+            };
+
+            const modal = document.getElementById("modal");
+            const modalEmbed = document.getElementById("modalEmbed");
+            modalEmbed.src = embeds[buttonId];
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            const modalEmbed = document.getElementById("modalEmbed");
+            modalEmbed.src = "";
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
