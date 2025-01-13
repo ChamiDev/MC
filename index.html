@@ -141,11 +141,9 @@
             background: rgba(0, 0, 0, 0.5);
             padding: 10px;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 18px;
             z-index: 1000;
         }
-
-        /* Modal Informativo */
 
         .modalinfo {
             display: none;
@@ -181,16 +179,90 @@
             position: relative;
             cursor: pointer;
         }
+
+        #modalReview .modal-content {
+            text-align: center;
+            border-radius: 15px;
+            background: #505050;
+            padding: 10px 10px 10px 10px;
+            margin: 5px 5px 5px 5px;
+        }
+
+        #modalReview button {
+            background: rgba(0, 0, 0, 0.5);
+            width: 90%;
+            color: #fff;
+            border: none;
+            padding: 10px 10px 10px 10px;
+            margin: 5px 5px 5px 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        #modalReview button:hover {
+            background: #007bff;
+        }
+
+        .warn {
+            width: 98%;
+            height: 2px;
+            position: relative;
+            background-color: black;
+            margin: 20px 5px 20px 5px;
+        }
+
+        .warn a {
+            top: -8px;
+            position: relative;
+            background-color: #505050;
+            padding: 1px 10px 1px 10px;
+            margin: 5px 5px 5px 5px;
+        }
+
+        .youtubers {
+            width: 30px;
+            border-radius: 100%;
+            position: relative;
+        }
+
+        .back {
+            position: absolute;
+            top: 0px;
+            left: -100%;
+            background-color: gray;
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 100px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            animation: slideIn 1s forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                left: -100%;
+            }
+            to {
+                left: 0;
+            }
+        }
     </style>
+
 </head>
 
 <body>
+    <a href="https://chamidev.github.io/" class="back">
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon src="https://cdn.lordicon.com/tfwhvbiq.json" trigger="in" delay="100" state="in-reveal" colors="primary:#e4e4e4,secondary:#121331" style="width:50px;height:50px">
+        </lord-icon>
+    </a>
     <div class="fondo"></div>
     <div id="modalinfo" class="modalinfo">
         <a>
             Recuerda que las cosas pueden cambiar dependiendo de las actualizaciones.<br><br>
             Todo está basado en la versión 1.20.60 (15 de noviembre de 2023).<br><br>
-            Puedes ver los <a href="https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs">Release Changelogs</a> para estar al tanto de las novedades más recientes.
+            Puedes ver los 
+            <a href="https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs">Release Changelogs</a> para estar al tanto de las novedades más recientes.
         </a>
         <div class="aldeano">
             <img src="https://minecraft.wiki/images/Villager_Render_MCL.png" alt="Aldeano">
@@ -214,15 +286,14 @@
             <button class="button" onclick="showModal(3)">
                 <img class="bimg" src="https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png">
             </button>
-            <button class="button">
-                <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
+            <button class="button" onclick="review">
+                <img class="bimg" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/26/Emerald_JE3_BE3.png">
             </button>
-            <button class="button">
-                <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
-            </button>
+            <button class="button" onclick="showModalReview()">
+    <img class="bimg" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e9/Book_and_Quill_JE2_BE2.png">
+</button>
         </div>
     </div>
-
     <div id="modal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">×</button>
@@ -233,12 +304,33 @@
             </div>
         </div>
     </div>
+    <div id="modalReview" class="modal">
+        <div class="modal-content">
+            <a class="modal-close" onclick="closeModalReview()">×</a>
+            <h2>REVIEWS</h2>
+            <a style="color:#303030">Ordenadas de mas antiguo a mas nuevos</a>
+            <div>
+                <div class="warn"><a>ACTUALIZACIONES</a></div>
+                <a style="color:#303030">6 de febrero de 2024 - 01 de noviembre de 2024</a>
+                <button onclick="window.open('https://www.youtube.com/playlist?list=PLn4pL6CpejlOyUWR5nbkGU201dzI8GxMo', '_blank')">1.20 Parte 2</button>
+                <button onclick="window.open('https://www.youtube.com/playlist?list=PLn4pL6CpejlPJU20nHT4TGYhqdtcjw-6p', '_blank')">1.21 Parte 1</button>
+                <button onclick="window.open('https://www.youtube.com/playlist?list=PLn4pL6CpejlOvVseav6AVE7j7GukN3PnK', '_blank')">1.21 Parte 2</button>
+                <button onclick="window.open('https://www.youtube.com/playlist?list=PLn4pL6CpejlM7sjYP8nOqJ7NQux0ON2Sp', '_blank')">1.22 Parte 1</button>
+                <button onclick="window.open('https://www.youtube.com/playlist?list=PLn4pL6CpejlOxr_BW7L_ALhvhZVa2qC4B', '_blank')">1.22 Parte 2</button>
+                <div class="warn"><a>DROPS</a></div>
+                <a style="color:#303030">3 de diciembre de 2024 - <a id="fechaActual" style="color:#303030"></a></a>
+                <button onclick="window.open('https://youtu.be/4pjk0wQ2KGY', '_blank')">Bundles Of Bravery</button>
+                <button onclick="window.open('https://youtu.be/2D-uAVqdz3k', '_blank')">The Garden Awakens Drop</button>
+            </div>
+        </div>
+    </div>
     <div class="creditos">
-        Video grabado por
-        <a href="https://www.youtube.com/@soymiguelgamer" style="color: cyan;">Miguel Gamer</a>,
-        <a href="https://www.youtube.com/@ElGera" style="color: red;">El Gera
-</a> y
-        <a href="https://www.youtube.com/@mrhugod" style="color: green;">MrHugod</a>
+        Videos grabados por<br>
+        <a href="https://www.youtube.com/@soymiguelgamer" style="color: cyan;"><img class="youtubers" src="https://yt3.googleusercontent.com/60AFL1eXXE7kuYeeZpLW5iGqHD7Xekjsedc3ubMEWw8lMEnfaytFd-ldNI3Q9TrgJiVfe65j=s160-c-k-c0x00ffffff-no-rj"></a>
+        <a href="https://www.youtube.com/@ElGera" style="color: red;"><img class="youtubers" src="https://yt3.googleusercontent.com/A8rhzbI3Cs6likMwXszhuWxMi2h1IRcB73p1LxA1jhM9e_LC5i6NrOyQ99On2ckHLTpymwgOUg=s160-c-k-c0x00ffffff-no-rj"></a>
+        <a href="https://www.youtube.com/@mrhugod" style="color: green;"><img class="youtubers" src="https://yt3.googleusercontent.com/gaS64GTK9cBEyE9Plcl7flfDXmzpEgDz2QOOXs5B-4aIX4OfYVCMjOUvcKCivNsr4tEkz8gVzv0=s160-c-k-c0x00ffffff-no-rj"></a>
+        <a href="https://www.youtube.com/@wa99rriormc" style="color: red;"><img class="youtubers" src="https://yt3.googleusercontent.com/C4LBU4648-LHxaTwEvK1Fhe43sAOD6yFtNnYPckyARMMHD0Smz5K79dJwbxhdLHhQ5ADwh9Twg=s160-c-k-c0x00ffffff-no-rj"></a>
+        <a href="https://www.youtube.com/@BobicraftMC" style="color: gray;"><img class="youtubers" src="https://yt3.googleusercontent.com/vQosRxVIK2oO3skrnDtDcybXjjbX5JB1jqBTTUzxk81zZfuJ7sxC2j7QyrQ4qma-9qmuhDecOg=s160-c-k-c0x00ffffff-no-rj"></a>
     </div>
     <script>
         function showModal(buttonId) {
@@ -246,8 +338,7 @@
                 1: "https://drive.google.com/file/d/1VN63QjdyqDgKVvm3Cyex6wyhPVCXVD0Q/preview",
                 2: "https://drive.google.com/file/d/1qM3INfbCfUyZNHqfEPBB5z6ui5B5f0Jp/preview",
                 3: "https://drive.google.com/file/d/1wzq5a_aJrbg4yYgqyNeoN_9fveIbvvsN/preview",
-                4: "https://drive.google.com/file/d/1ABCDXYZ/preview",
-                5: "https://drive.google.com/file/d/1ABCDXYZ/preview"
+                4: "https://drive.google.com/file/d/1OU447qrCVoQywiJlXeRGS6dObRKIgY24/preview",
             };
 
             const modal = document.getElementById("modal");
@@ -262,8 +353,7 @@
             modalEmbed.src = "";
             modal.style.display = "none";
         }
-    </script>
-    <script>
+
         function Aviso() {
             const modalInfo = document.getElementById("modalinfo");
             const audio = new Audio("https://minecraft.wiki/images/transcoded/Villager_accept2.ogg/Villager_accept2.ogg.mp3");
@@ -273,6 +363,27 @@
                 modalInfo.style.display = "none";
             }, 5000); // Cierra después de 10 segundos
         }
+
+        function showModalReview() {
+            const modalReview = document.getElementById("modalReview");
+            modalReview.style.display = "flex";
+        }
+
+        function closeModalReview() {
+            const modalReview = document.getElementById("modalReview");
+            modalReview.style.display = "none";
+        }
+        const fecha = new Date();
+
+        const opciones = {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        };
+
+        const fechaFormateada = fecha.toLocaleDateString('es-ES', opciones);
+
+        document.getElementById('fechaActual').textContent = fechaFormateada;
     </script>
 </body>
 
