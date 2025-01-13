@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, user-scalable=none">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="Chami">
-    <meta name="description" content="Guia de MCBE Oficial">
+    <meta name="description" content="Guia de MC definitiva">
     <link rel="icon" href="https://www.minecraft.net/etc.clientlibs/minecraftnet/clientlibs/clientlib-site/resources/favicon.ico" type="image/png">
-    <title>Guia MC</title>
+    <title>Guia</title>
     <style>
         body {
             margin: 0;
@@ -75,7 +75,7 @@
             backdrop-filter: blur(5px);
             color: #fff;
             border: none;
-            padding: 0px 0px 0px 0px;
+            padding: 2px 2px 2px 2px;
             border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -87,8 +87,8 @@
         }
 
         .bimg {
-            max-width: 44px;
-            max-height: 44px;
+            max-width: 40px;
+            max-height: 40px;
         }
 
         .modal {
@@ -96,8 +96,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 90%;
-            height: 90%;
+            width: 100%;
+            height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
@@ -112,13 +112,6 @@
             position: relative;
             width: 80%;
             max-width: 600px;
-        }
-
-        .modal-content iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-            border-radius: 10px;
         }
 
         .modal-close {
@@ -149,12 +142,60 @@
             padding: 10px;
             border-radius: 5px;
             font-size: 1rem;
+            z-index: 1000;
+        }
+
+        /* Modal Informativo */
+
+        .modalinfo {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            border: 3px solid #000;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            z-index: 2000;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .modalinfo a {
+            color: blue;
+        }
+
+        .aldeano {
+            margin-top: 10px;
+        }
+
+        .aldeano img {
+            width: 50px;
+            height: auto;
+        }
+
+        .info-button {
+            position: relative;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
     <div class="fondo"></div>
+    <div id="modalinfo" class="modalinfo">
+        <a>
+            Recuerda que las cosas pueden cambiar dependiendo de las actualizaciones.<br><br>
+            Todo está basado en la versión 1.20.60 (15 de noviembre de 2023).<br><br>
+            Puedes ver los <a href="https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs">Release Changelogs</a> para estar al tanto de las novedades más recientes.
+        </a>
+        <div class="aldeano">
+            <img src="https://minecraft.wiki/images/Villager_Render_MCL.png" alt="Aldeano">
+        </div>
+    </div>
     <div class="container">
         <div class="game-header">
             <img class="cabeza" src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Play_With_Friends_Local_672x360.png" alt="Minecraft">
@@ -165,18 +206,18 @@
         </div>
         <div class="buttons">
             <button class="button" onclick="showModal(1)">
-                <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
+                <img class="bimg" src="https://minecraft.wiki/images/Grass_Block_JE7_BE6.png">
             </button>
             <button class="button" onclick="showModal(2)">
-                <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
+                <img class="bimg" src="https://minecraft.wiki/images/Enchanting_Table.gif">
             </button>
             <button class="button" onclick="showModal(3)">
+                <img class="bimg" src="https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png">
+            </button>
+            <button class="button">
                 <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
             </button>
-            <button class="button" onclick="showModal(4)">
-                <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
-            </button>
-            <button class="button" onclick="showModal(5)">
+            <button class="button">
                 <img class="bimg" src="https://www.cise.ufl.edu/~kcen/cis4930/assign5/assign5_files/spinning.gif">
             </button>
         </div>
@@ -186,20 +227,25 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">×</button>
             <iframe id="modalEmbed" src="" allowfullscreen></iframe>
+            <div class="info-button" onclick="Aviso()">
+                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                <lord-icon src="https://cdn.lordicon.com/azxkyjta.json" trigger="in" delay="10000" state="in-reveal" colors="primary:#ffc738,secondary:#ff0000" style="width:50px;height:50px"></lord-icon>
+            </div>
         </div>
     </div>
     <div class="creditos">
         Video grabado por
         <a href="https://www.youtube.com/@soymiguelgamer" style="color: cyan;">Miguel Gamer</a>,
-        <a href="https://www.youtube.com/" style="color: red;">?</a> y
-        <a href="https://www.youtube.com/" style="color: green;">?</a>
+        <a href="https://www.youtube.com/@ElGera" style="color: red;">El Gera
+</a> y
+        <a href="https://www.youtube.com/@mrhugod" style="color: green;">MrHugod</a>
     </div>
     <script>
         function showModal(buttonId) {
             const embeds = {
                 1: "https://drive.google.com/file/d/1VN63QjdyqDgKVvm3Cyex6wyhPVCXVD0Q/preview",
-                2: "https://drive.google.com/file/d/1ABCDXYZ/preview",
-                3: "https://drive.google.com/file/d/1ABCDXYZ/preview",
+                2: "https://drive.google.com/file/d/1qM3INfbCfUyZNHqfEPBB5z6ui5B5f0Jp/preview",
+                3: "https://drive.google.com/file/d/1wzq5a_aJrbg4yYgqyNeoN_9fveIbvvsN/preview",
                 4: "https://drive.google.com/file/d/1ABCDXYZ/preview",
                 5: "https://drive.google.com/file/d/1ABCDXYZ/preview"
             };
@@ -215,6 +261,17 @@
             const modalEmbed = document.getElementById("modalEmbed");
             modalEmbed.src = "";
             modal.style.display = "none";
+        }
+    </script>
+    <script>
+        function Aviso() {
+            const modalInfo = document.getElementById("modalinfo");
+            const audio = new Audio("https://minecraft.wiki/images/transcoded/Villager_accept2.ogg/Villager_accept2.ogg.mp3");
+            audio.play();
+            modalInfo.style.display = "block";
+            setTimeout(() => {
+                modalInfo.style.display = "none";
+            }, 5000); // Cierra después de 10 segundos
         }
     </script>
 </body>
