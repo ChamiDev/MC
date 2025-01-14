@@ -135,7 +135,7 @@
         }
 
         .creditos {
-            position: absolute;
+            position: fixed;
             bottom: 10px;
             left: 10px;
             background: rgba(0, 0, 0, 0.5);
@@ -143,6 +143,19 @@
             border-radius: 5px;
             font-size: 18px;
             z-index: 1000;
+        }
+
+        .youtubers {
+            width: 30px;
+            border-radius: 100%;
+            position: relative;
+            transition: transform 0.3s ease, width 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .youtubers:hover {
+            width: 40px;
+            transform: rotate(10deg);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
         }
 
         .modalinfo {
@@ -218,12 +231,6 @@
             background-color: #505050;
             padding: 1px 10px 1px 10px;
             margin: 5px 5px 5px 5px;
-        }
-
-        .youtubers {
-            width: 30px;
-            border-radius: 100%;
-            position: relative;
         }
 
         .back {
@@ -325,7 +332,8 @@
         </div>
     </div>
     <div class="creditos">
-        Videos grabados por<br>
+
+        Agradecimientos especiales<br>
         <a href="https://www.youtube.com/@soymiguelgamer" style="color: cyan;"><img class="youtubers" src="https://yt3.googleusercontent.com/60AFL1eXXE7kuYeeZpLW5iGqHD7Xekjsedc3ubMEWw8lMEnfaytFd-ldNI3Q9TrgJiVfe65j=s160-c-k-c0x00ffffff-no-rj"></a>
         <a href="https://www.youtube.com/@ElGera" style="color: red;"><img class="youtubers" src="https://yt3.googleusercontent.com/A8rhzbI3Cs6likMwXszhuWxMi2h1IRcB73p1LxA1jhM9e_LC5i6NrOyQ99On2ckHLTpymwgOUg=s160-c-k-c0x00ffffff-no-rj"></a>
         <a href="https://www.youtube.com/@mrhugod" style="color: green;"><img class="youtubers" src="https://yt3.googleusercontent.com/gaS64GTK9cBEyE9Plcl7flfDXmzpEgDz2QOOXs5B-4aIX4OfYVCMjOUvcKCivNsr4tEkz8gVzv0=s160-c-k-c0x00ffffff-no-rj"></a>
